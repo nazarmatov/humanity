@@ -1,18 +1,41 @@
-## Getting Started
+# Transport System
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Description
+This project is a simple Java-based transport system demonstrating basic Object-Oriented Programming (OOP) principles like inheritance, encapsulation, and method overriding.
 
-## Folder Structure
+## Structure
+The project consists of the following classes inside the `transports` package:
 
-The workspace contains two folders by default, where:
+### 1. `Transport`
+- Base class for all transport types.
+- Attributes: `type`, `brand`, and `levelOfTank`.
+- Methods:
+  - `feelTank()` - Refills the fuel tank.
+  - Getters and setters for `type`, `brand`, and `levelOfTank`.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### 2. `Car` (extends `Transport`)
+- Represents a car with an additional attribute `carType`.
+- Methods:
+  - `crushTheCar()` - Simulates the car being crushed.
+  - Getters and setters for `carType`.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 3. `Airplan` (extends `Transport`)
+- Represents an airplane with additional attributes `name` and `free` (indicates if the plane is available).
+- Methods:
+  - `blastOff()` - Simulates the airplane taking off.
+  - `plant()` - Simulates the airplane landing.
+  - Getters and setters for `name`.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Usage
+- Create objects of `Car` and `Airplan`.
+- Use their methods to perform actions like refueling, blasting off, landing, and crushing.
 
-## Dependency Management
+## Example
+```java
+Car car = new Car("Sedan", "Vehicle", "Toyota");
+car.feelTank();
+System.out.println(car.crushTheCar());
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Airplan plane = new Airplan("Boeing 747", "Boeing", "Airplane");
+plane.blastOff();
+plane.plant();
